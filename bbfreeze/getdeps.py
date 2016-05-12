@@ -81,6 +81,8 @@ if sys.platform == 'win32':
         except Exception, err:
             print "WARNING: could not determine binary dependencies for %r:%s" % (path, err)
             dlls = []
+        finally:
+            pe.close()
         return dlls
 
     _bpath = None
